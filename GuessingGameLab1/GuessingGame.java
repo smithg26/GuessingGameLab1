@@ -2,9 +2,11 @@ import java.util.*;
 public class GuessingGame {
 	public static void main(String [] args){
 		Scanner input=new Scanner(System.in);
-		int guess=0;		
+		int guess=0;	
+		int counter=0;
 		int x=(int)(Math.random()*10);
 		while(guess!=x||guess!=-1){
+			counter++;
 		System.out.print("Please guess an integer between 0 and 10 or enter -1 to exit.");		
 		int guess=input.nextInt();			
 		if(guess<0||guess>10){
@@ -22,7 +24,7 @@ public class GuessingGame {
 		}
 		}
 		
-			System.out.println("Thank you for playing. Goodbye.");
+			System.out.println("You attempted "+counter+" Thank you for playing. Goodbye.");
 			System.exit(1);
 		}
 }
